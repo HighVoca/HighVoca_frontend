@@ -1,0 +1,75 @@
+import { css, Global } from '@emotion/react';
+import emotionNormalize from 'emotion-normalize';
+
+const style = css`
+  ${emotionNormalize}
+    ol, ul {
+    list-style: none;
+  }
+
+  a{
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+    	text-decoration: none;
+		color: none;
+	}
+    
+	&:active {
+    	text-decoration: none;
+		color: black;
+	}
+        
+    &:visited {
+    	text-decoration: none;
+		color: black;
+	}
+        
+	&:link {
+    	text-decoration: none;
+		color: black; 
+	}
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: 'NeoDunggeunmoPro-Regular', sans-serif;
+  }
+
+  input {
+    outline: none;
+  }
+
+  :root {
+  --vh: 100%;
+  }
+
+  body{
+    padding: 3rem 2rem 9rem 2rem;
+  }
+  #root{
+    font-family: NeoDunggeunmoPro-Regular;
+  }
+  #root, body, html {
+    scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
+    margin: 0 auto;
+    font-size: 62.5%;
+    -ms-overflow-style: none; /* 인터넷 익스플로러  스크롤바 숨김 */
+    scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
+
+    /* 버튼 클릭 시 색 제거 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  #root::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 스크롤바 숨김 */
+  }
+`;
+
+const GlobalStyle = () => {
+	return <Global styles={style} />;
+};
+
+export default GlobalStyle;

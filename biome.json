@@ -9,6 +9,7 @@
 		"ignoreUnknown": false
 	},
 	"formatter": {
+		"formatWithErrors": true,
 		"enabled": true,
 		"indentStyle": "tab",
 		"indentWidth": 2,
@@ -25,6 +26,9 @@
 		}
 	},
 	"javascript": {
+		"parser": {
+			"jsxEverywhere": true
+		},
 		"formatter": {
 			"enabled": true,
 			"quoteStyle": "single",
