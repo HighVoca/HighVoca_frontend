@@ -1,9 +1,17 @@
 import { css, Global } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
+import PretendardVariable from '../assets/fonts/PretendardVariable.woff2'
 
 const style = css`
-  ${emotionNormalize}
-    ol, ul {
+  ${emotionNormalize};
+
+  @font-face {
+    font-family: 'Pretendard-Variable';
+    src: url(${PretendardVariable}) format('woff2');
+    font-style: normal;
+  }
+
+  ol, ul {
     list-style: none;
   }
 
@@ -46,7 +54,7 @@ const style = css`
     cursor: pointer;
     border: none;
     background: none;
-    font-family: 'NeoDunggeunmoPro-Regular', sans-serif;
+    font-family: 'Pretendard-Variable', sans-serif;
   }
 
   input {
@@ -63,7 +71,7 @@ const style = css`
     padding: 0 2.4rem;
   }
   #root{
-    font-family: NeoDunggeunmoPro-Regular;
+    font-family: Pretendard-Variable;
     height: 100vh;
   }
   #root, body, html {
