@@ -7,8 +7,8 @@ interface StyleProps {
   children: React.ReactNode;
 }
 
-const Style = ({children: StyleProps}) => {
-	return (
+const Style = ({ children }: StyleProps) => {
+  return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       {children}
