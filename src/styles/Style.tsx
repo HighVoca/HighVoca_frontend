@@ -4,16 +4,16 @@ import GlobalStyle from './GlobalStyle';
 import type React from 'react';
 
 interface StyleProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const Style = ({ children }: StyleProps) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      {children}
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			{children}
+		</ThemeProvider>
+	);
 };
 
 export default Style;

@@ -1,8 +1,10 @@
+import * as S from './Login.style';
+
 export default function Login() {
 	return (
-		<div>
-			<div>로그인 페이지입니다. </div>
-			<div></div>
-		</div>
+		<S.Layout>
+			<S.Logo>HighVoca</S.Logo>
+			<S.Subtext>친근한 영어 단어 학습 앱</S.Subtext>
+		</S.Layout>
 	);
 }

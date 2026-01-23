@@ -7,6 +7,17 @@ const style = css`
     list-style: none;
   }
 
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    margin: 0;
+  }
+
   a{
 	text-decoration: none;
 	color: inherit;
@@ -47,14 +58,18 @@ const style = css`
   }
 
   body{
-    padding: 3rem 2rem 9rem 2rem;
+    max-width: 700px;
+    height: 100vh;
+    padding: 0 2.4rem;
   }
   #root{
     font-family: NeoDunggeunmoPro-Regular;
+    height: 100vh;
   }
   #root, body, html {
     scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
     margin: 0 auto;
+    background-color: #131842;
     font-size: 62.5%;
     -ms-overflow-style: none; /* 인터넷 익스플로러  스크롤바 숨김 */
     scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
