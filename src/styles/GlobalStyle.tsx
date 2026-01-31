@@ -1,6 +1,6 @@
 import { css, Global } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
-import PretendardVariable from '../assets/fonts/PretendardVariable.woff2'
+import PretendardVariable from '../assets/fonts/PretendardVariable.woff2';
 
 const style = css`
   ${emotionNormalize};
@@ -19,10 +19,11 @@ const style = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
   h1,h2,h3,h4,h5,h6, p{
+    width: 100%;
+    text-align: left;  
     margin: 0;
   }
 
@@ -51,10 +52,14 @@ const style = css`
   }
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     border: none;
     background: none;
     font-family: 'Pretendard-Variable', sans-serif;
+    disabled: 
   }
 
   input {

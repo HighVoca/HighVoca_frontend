@@ -4,6 +4,8 @@ const colors = {
 	gradientCenter:
 		'linear-gradient(180deg, #E68369 0%, #ECCEA9 50%, #E68369 100%)',
 	bgBlack: '#131842',
+	white: '#FBF6E2',
+	gray: '#544F61',
 };
 
 // 다른 theme 설정 확장 고려
