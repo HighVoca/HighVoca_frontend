@@ -4,7 +4,11 @@ import LevelButton from '../LevelButton/LevelButton';
 import SubmitButton from '../../../../components/SubmitButton/SubmitButton';
 import { useState } from 'react';
 
-export default function CheckStep() {
+interface CheckStepProps {
+	onNext: VoidFunction;
+}
+
+export default function CheckStep({ onNext }: CheckStepProps) {
 	const [clickedLevel, setClickedLevel] = useState<number>(0);
 	const [logoKey, setLogoKey] = useState<number>(0);
 	const levels = [
@@ -57,7 +61,7 @@ export default function CheckStep() {
 					setLogoKey={setLogoKey}
 				/>
 			))}
-			<SubmitButton isDisable={clickedLevel === 0}>
+			<SubmitButton isDisable={clickedLevel === 0} onClick={onNext}>
 				레벨테스트 시작하기
 			</SubmitButton>
 		</S.CheckStepLayout>

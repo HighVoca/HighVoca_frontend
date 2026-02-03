@@ -77,6 +77,7 @@ const style = css`
   }
   #root{
     font-family: Pretendard-Variable;
+    color: #FBF6E2;
     height: 100vh;
   }
   #root, body, html {
