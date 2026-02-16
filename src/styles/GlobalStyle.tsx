@@ -11,6 +11,10 @@ const style = css`
     font-style: normal;
   }
 
+  *{
+    box-sizing: border-box;
+  }
+
   ol, ul {
     list-style: none;
   }
