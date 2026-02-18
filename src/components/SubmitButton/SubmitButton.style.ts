@@ -5,7 +5,7 @@ interface SubmitButtonLayoutProps {
 }
 
 export const SubmitButtonLayout = styled.button<SubmitButtonLayoutProps>`
-  width: 34.5rem;
+  width: 100%;
   height: 6rem;
   margin-top: auto;
   border-radius: 2rem;
