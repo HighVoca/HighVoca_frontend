@@ -1,6 +1,5 @@
 import * as S from './Main.style';
 import { useState } from 'react';
-import NavigateBar from '../../components/NavigateBar/NavigateBar';
 import WordTab from './components/WordTab/WordTab';
 import WordCard from './components/WordCard/WordCard';
 
@@ -88,7 +87,6 @@ export default function Main() {
 					languageType={clickedLanguage}
 				/>
 			))}
-			<NavigateBar />
 		</S.MainLayout>
 	);
 }

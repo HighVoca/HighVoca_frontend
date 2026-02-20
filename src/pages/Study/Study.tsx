@@ -4,7 +4,6 @@ import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import logoImage from '../../assets/svgs/LogoIcon.svg';
 import IcSetting from '../../assets/svgs/IcSetting';
 import IcRight from '../../assets/svgs/IcRight';
-import NavigateBar from '../../components/NavigateBar/NavigateBar';
 
 export default function Study() {
   const [testNum, setTestNum] = useState<number>(25);
@@ -26,7 +25,6 @@ export default function Study() {
         </S.SettingButton>
         <SubmitButton>시작</SubmitButton>
       </S.SettingContainer>
-      <NavigateBar />
     </S.StudyLayout>
   )
 }
