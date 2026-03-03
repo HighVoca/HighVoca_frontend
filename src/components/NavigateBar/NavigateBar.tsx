@@ -15,7 +15,7 @@ export default function NavigateBar() {
 	};
 	const handleWord = () => {
 		navigate('/main');
-	};	
+	};
 	const handleMy = () => {
 		navigate('/mypage');
 	};
@@ -27,11 +27,11 @@ export default function NavigateBar() {
 				학습
 			</S.StudyButton>
 			<S.NavigateTab onClick={handleWord}>
-				<IcWord isActive={lastSegment==='main'}/>
+				<IcWord isActive={lastSegment === 'main'} />
 				단어장
 			</S.NavigateTab>
 			<S.NavigateTab onClick={handleMy}>
-				<IcMy isActive={lastSegment==='mypage'}/>
+				<IcMy isActive={lastSegment === 'mypage'} />
 				마이페이지
 			</S.NavigateTab>
 		</S.NavigateBarLayout>

@@ -9,9 +9,9 @@ const IcCheck = () => (
 		<path
 			d='M11.6546 3.4964L5.24458 9.90643L2.33093 6.99278'
 			stroke='white'
-			stroke-width='1.74819'
-			stroke-linecap='round'
-			stroke-linejoin='round'
+			strokeWidth='1.74819'
+			strokeLinecap='round'
+			strokeLinejoin='round'
 		/>
 	</svg>
 );

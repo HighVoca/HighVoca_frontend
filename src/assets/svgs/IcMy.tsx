@@ -1,8 +1,8 @@
 type ActiveType = {
-  isActive: boolean;
+	isActive: boolean;
 };
 
-const IcMy = ({isActive}: ActiveType) => (
+const IcMy = ({ isActive }: ActiveType) => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
 		width='24'

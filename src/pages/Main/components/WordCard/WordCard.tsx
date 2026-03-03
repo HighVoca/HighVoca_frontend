@@ -38,7 +38,9 @@ export default function WordCard({
 									{isClicked ? (
 										<S.SubText>{meaning}</S.SubText>
 									) : (
-										<S.SpellingButton onClick={handleClick}>탭해서 단어 보기</S.SpellingButton>
+										<S.SpellingButton onClick={handleClick}>
+											탭해서 단어 보기
+										</S.SpellingButton>
 									)}
 								</>
 							);
@@ -49,14 +51,18 @@ export default function WordCard({
 									{isClicked ? (
 										<S.SubText>{spelling}</S.SubText>
 									) : (
-										<S.SpellingButton onClick={handleClick}>탭해서 스펠링 보기</S.SpellingButton>
+										<S.SpellingButton onClick={handleClick}>
+											탭해서 스펠링 보기
+										</S.SpellingButton>
 									)}
 								</>
 							);
 					}
 				})()}
 			</S.TextContainer>
-			<S.SupportContainer>{isWrong && <S.WrongBadge>틀림</S.WrongBadge>}</S.SupportContainer>
+			<S.SupportContainer>
+				{isWrong && <S.WrongBadge>틀림</S.WrongBadge>}
+			</S.SupportContainer>
 		</S.WordCardLayout>
 	);
 }

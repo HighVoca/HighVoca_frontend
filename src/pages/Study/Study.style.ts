@@ -13,9 +13,9 @@ export const SettingContainer = styled.div`
   gap: 1rem;
   padding: 2.5rem;
   border-radius: 3.2rem;
-  border: 0.1rem solid rgba(236, 206, 169, 0.20);
-  background: rgba(19, 24, 66, 0.70);
-  box-shadow: 0 2rem 4rem -1.2rem rgba(0, 0, 0, 0.50);
+  border: 0.1rem solid rgba(236, 206, 169, 0.2);
+  background: rgba(19, 24, 66, 0.7);
+  box-shadow: 0 2rem 4rem -1.2rem rgba(0, 0, 0, 0.5);
 `;
 
 export const Subtext = styled.p`
@@ -44,8 +44,8 @@ export const SettingButton = styled.button`
   height: 6rem;
   padding: 0 1.5rem;
   border-radius: 2rem;
-  border: 0.1rem solid rgba(236, 206, 169, 0.20);
-  background: rgba(19, 24, 66, 0.50);
+  border: 0.1rem solid rgba(236, 206, 169, 0.2);
+  background: rgba(19, 24, 66, 0.5);
   font-size: 1.4rem;
   font-weight: 600;
 `;
@@ -61,5 +61,5 @@ export const IconWrapper = styled.div`
   height: 3.2rem;
   justify-content: center;
   border-radius: 2.4rem;
-  background: rgba(230, 131, 105, 0.20);  
+  background: rgba(230, 131, 105, 0.2);
 `;
