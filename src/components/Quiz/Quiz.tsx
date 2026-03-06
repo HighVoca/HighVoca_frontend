@@ -7,7 +7,7 @@ import IcWrong from '../../assets/svgs/IcWrong';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Toast, { useToast } from './Toast/Toast';
 
-type QuizQuestion = {
+export type QuizQuestion = {
   id: string;
   word: string;
   pronunciation: string;
@@ -17,14 +17,46 @@ type QuizQuestion = {
 const MAX_ATTEMPTS = 3;
 const TOAST_MS = 1400;
 
-export default function Quiz() {
+type QuizProps = {
+  maxNum: number;
+  questions?: QuizQuestion[];
+  onClose?: () => void;
+  onFinish?: () => void;
+};
+
+function clampInt(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, Math.floor(value)));
+}
+
+function buildQuestions(maxNum: number, provided?: QuizQuestion[]): QuizQuestion[] {
+  const base: QuizQuestion[] =
+    provided && provided.length > 0
+      ? provided
+      : [
+          { id: 'q1', word: 'apple', pronunciation: '/ˈæp.əl/', answer: '사과' },
+          { id: 'q2', word: 'banana', pronunciation: '/bəˈnɑː.nə/', answer: '바나나' },
+          { id: 'q3', word: 'book', pronunciation: '/bʊk/', answer: '책' },
+          { id: 'q4', word: 'computer', pronunciation: '/kəmˈpjuː.tər/', answer: '컴퓨터' },
+          { id: 'q5', word: 'water', pronunciation: '/ˈwɔː.tər/', answer: '물' },
+          { id: 'q6', word: 'coffee', pronunciation: '/ˈkɒf.i/', answer: '커피' },
+        ];
+
+  const target = clampInt(maxNum, 1, 500);
+
+  if (base.length >= target) return base.slice(0, target);
+
+  const filled: QuizQuestion[] = [];
+  for (let i = 0; i < target; i += 1) {
+    const q = base[i % base.length];
+    filled.push({ ...q, id: `${q.id}-${i + 1}` });
+  }
+  return filled;
+}
+
+export default function Quiz({ maxNum, questions: providedQuestions, onClose, onFinish }: QuizProps) {
   const questions: QuizQuestion[] = useMemo(
-    () => [
-      { id: 'q1', word: 'apple', pronunciation: '/ˈæp.əl/', answer: '사과' },
-      { id: 'q2', word: 'banana', pronunciation: '/bəˈnɑː.nə/', answer: '바나나' },
-      { id: 'q3', word: 'book', pronunciation: '/bʊk/', answer: '책' },
-    ],
-    []
+    () => buildQuestions(maxNum, providedQuestions),
+    [maxNum, providedQuestions]
   );
 
   const MAX_NUM = questions.length;
@@ -35,7 +67,7 @@ export default function Quiz() {
   const { toast, showToast } = useToast(TOAST_MS);
   const nextTimerRef = useRef<number | null>(null);
 
-  const current = questions[curIndex];
+  const current = questions[curIndex] ?? questions[0];
   const CUR_NUM = curIndex + 1;
 
   const progressPercent = Math.max(0, Math.min(100, (CUR_NUM / MAX_NUM) * 100));
@@ -43,16 +75,29 @@ export default function Quiz() {
   const goNextQuestion = () => {
     setCurIndex((prev) => {
       const next = prev + 1;
-      return next >= questions.length ? prev : next;
+      if (next >= questions.length) return prev;
+      return next;
     });
     setAttemptsLeft(MAX_ATTEMPTS);
     setAnswerInput('');
+  };
+
+  const finishQuiz = () => {
+    showToast('학습 완료!', 'success');
+    if (nextTimerRef.current) window.clearTimeout(nextTimerRef.current);
+    nextTimerRef.current = window.setTimeout(() => {
+      onFinish?.();
+    }, TOAST_MS);
   };
 
   const revealAnswerAndNext = () => {
     showToast(`정답: ${current.answer}`, 'info');
     if (nextTimerRef.current) window.clearTimeout(nextTimerRef.current);
     nextTimerRef.current = window.setTimeout(() => {
+      if (curIndex >= questions.length - 1) {
+        finishQuiz();
+        return;
+      }
       goNextQuestion();
     }, TOAST_MS);
   };
@@ -70,6 +115,10 @@ export default function Quiz() {
       showToast('정답입니다!', 'success');
       if (nextTimerRef.current) window.clearTimeout(nextTimerRef.current);
       nextTimerRef.current = window.setTimeout(() => {
+        if (curIndex >= questions.length - 1) {
+          finishQuiz();
+          return;
+        }
         goNextQuestion();
       }, TOAST_MS);
       return;
@@ -100,7 +149,7 @@ export default function Quiz() {
     <S.QuizLayout>
       <S.QuizHeader>
         {CUR_NUM}/{MAX_NUM}
-        <S.IconWrapper>
+        <S.IconWrapper type='button' onClick={onClose} aria-label='퀴즈 닫기'>
           <IcClose />
         </S.IconWrapper>
       </S.QuizHeader>

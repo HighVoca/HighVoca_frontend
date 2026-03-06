@@ -5,7 +5,6 @@ import Main from '../pages/Main/Main';
 import Study from '../pages/Study/Study';
 import LayoutWithNavigate from '../layouts/LayoutWithNavigate';
 import Mypage from '../pages/Mypage/Mypage';
-import Quiz from '../components/Quiz/Quiz';
 
 const router = createBrowserRouter(
   [
@@ -36,10 +35,6 @@ const router = createBrowserRouter(
         {
           path: '/onboarding',
           element: <Onboarding />,
-        },
-        {
-          path: '/quiz',
-          element: <Quiz />,
         },
       ],
     },

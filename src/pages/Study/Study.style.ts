@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 
 export const StudyLayout = styled.div`
   width: 100%;
+  height: 100vh;
+  justify-content: center;
+  gap: 2rem;
 `;
 
 export const Icon = styled.img`
@@ -62,4 +65,28 @@ export const IconWrapper = styled.div`
   justify-content: center;
   border-radius: 2.4rem;
   background: rgba(230, 131, 105, 0.2);
+`;
+
+export const InfoContainer = styled.div`
+  flex-direction: row;
+  width: 100%;
+  gap: 0.5rem;
+`;
+
+export const InfoBox = styled.div`
+  justify-content: center;
+  width: 100%;
+  height: 8.5rem;
+  gap: 1rem;
+  border-radius: 16px;
+  border: 0.1rem solid rgba(236, 206, 169, 0.2);
+  color: ${({ theme }) => theme.colors.gray};
+  font-size: 1.8rem;
+  font-weight: 600;
+`;
+
+export const InfoSpan = styled.span`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 2.4rem;
+  font-weight: 700;
 `;
