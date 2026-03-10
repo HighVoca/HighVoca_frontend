@@ -5,10 +5,12 @@ import logoImage from '../../assets/svgs/LogoIcon.svg';
 import IcSetting from '../../assets/svgs/IcSetting';
 import IcRight from '../../assets/svgs/IcRight';
 import Quiz from '../../components/Quiz/Quiz';
+import SettingModal from './components/SettingModal/SettingModal';
 
 export default function Study() {
-  const [testNum] = useState<number>(25);
+  const [testNum, setTestNum] = useState<number>(25);
   const [isStarted, setIsStarted] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   if (isStarted) {
     return (
@@ -22,13 +24,20 @@ export default function Study() {
 
   return (
     <S.StudyLayout>
+      {isOpen && (
+        <SettingModal
+          onClose={setIsOpen}
+          testNum={testNum}
+          onTestNum={setTestNum}
+        />
+      )}
       <S.Icon src={logoImage} />
       <S.SettingContainer>
         <S.Subtext>TODAY'S GOAL</S.Subtext>
         <S.GoalText>
           <S.HighlightSpan>0</S.HighlightSpan>/{testNum}
         </S.GoalText>
-        <S.SettingButton>
+        <S.SettingButton onClick={() => setIsOpen(true)}>
           <S.LeftArea>
             <S.IconWrapper>
               <IcSetting />

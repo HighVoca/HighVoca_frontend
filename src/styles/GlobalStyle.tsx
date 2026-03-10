@@ -11,48 +11,55 @@ const style = css`
     font-style: normal;
   }
 
-  *{
+  * {
     box-sizing: border-box;
   }
 
-  ol, ul {
+  ol,
+  ul {
     list-style: none;
   }
 
-  div{
+  div {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  h1,h2,h3,h4,h5,h6, p{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
     width: 100%;
-    text-align: left;  
+    text-align: left;
     margin: 0;
   }
 
-  a{
-	text-decoration: none;
-	color: inherit;
-	&:hover {
-    	text-decoration: none;
-		color: none;
-	}
-    
-	&:active {
-    	text-decoration: none;
-		color: black;
-	}
-        
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+      color: none;
+    }
+
+    &:active {
+      text-decoration: none;
+      color: black;
+    }
+
     &:visited {
-    	text-decoration: none;
-		color: black;
-	}
-        
-	&:link {
-    	text-decoration: none;
-		color: black; 
-	}
+      text-decoration: none;
+      color: black;
+    }
+
+    &:link {
+      text-decoration: none;
+      color: black;
+    }
   }
 
   button {
@@ -63,7 +70,7 @@ const style = css`
     border: none;
     background: none;
     font-family: 'Pretendard-Variable', sans-serif;
-    disabled: 
+    disabled:;
   }
 
   input {
@@ -71,20 +78,22 @@ const style = css`
   }
 
   :root {
-  --vh: 100%;
+    --vh: 100%;
   }
 
-  body{
+  body {
     max-width: 700px;
     height: 100vh;
     padding: 0 2.4rem;
   }
-  #root{
+  #root {
     font-family: Pretendard-Variable;
-    color: #FBF6E2;
+    color: #fbf6e2;
     height: 100vh;
   }
-  #root, body, html {
+  #root,
+  body,
+  html {
     scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
     margin: 0 auto;
     background-color: #131842;
@@ -93,7 +102,7 @@ const style = css`
     scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
 
     /* 버튼 클릭 시 색 제거 */
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   #root::-webkit-scrollbar {
@@ -102,7 +111,7 @@ const style = css`
 `;
 
 const GlobalStyle = () => {
-	return <Global styles={style} />;
+  return <Global styles={style} />;
 };
 
 export default GlobalStyle;
