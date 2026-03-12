@@ -1,4 +1,4 @@
-const IcRight = () => (
+const IcLeft = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='20'
@@ -7,7 +7,7 @@ const IcRight = () => (
     fill='none'
   >
     <path
-      d='M7.5053 4.99792L12.5032 9.99584L7.5053 14.9938'
+      d='M12.4947 14.9938L7.49683 9.99584L12.4947 4.99792'
       stroke='#ECCEA9'
       strokeWidth='2.49896'
       strokeLinecap='round'
@@ -16,4 +16,4 @@ const IcRight = () => (
   </svg>
 );
 
-export default IcRight;
+export default IcLeft;

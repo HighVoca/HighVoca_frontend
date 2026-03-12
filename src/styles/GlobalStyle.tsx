@@ -71,6 +71,7 @@ const style = css`
     background: none;
     font-family: 'Pretendard-Variable', sans-serif;
     disabled:;
+    padding: 0;
   }
 
   input {

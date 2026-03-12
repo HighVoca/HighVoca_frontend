@@ -2,10 +2,12 @@ import * as S from './Main.style';
 import { useState } from 'react';
 import WordTab from './components/WordTab/WordTab';
 import WordCard from './components/WordCard/WordCard';
+import CalendarTab from './components/CalendarTab/CalendarTab';
 
 export default function Main() {
   const [clickedCategory, setClickedCategory] = useState<string>('learned');
   const [clickedLanguage, setClickedLanguage] = useState<string>('All');
+  const [level, setLevel] = useState<number>(1);
   const wordCategories = [
     {
       key: 'learned',
@@ -72,6 +74,7 @@ export default function Main() {
           setClickedItem={setClickedCategory}
           size='large'
         />
+        <CalendarTab level={level} setLevel={setLevel} />
         <WordTab
           categories={languageCategories}
           clickedItem={clickedLanguage}
