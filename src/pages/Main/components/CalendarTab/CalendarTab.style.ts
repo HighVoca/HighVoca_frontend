@@ -20,6 +20,13 @@ export const CalendarContainer = styled.div`
   gap: 0.5rem;
 `;
 
+export const SelectedDateText = styled.span`
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.gray};
+  font-weight: 500;
+`;
+
 export const LevelContainer = styled.div`
   flex-direction: row;
   gap: 0.5rem;

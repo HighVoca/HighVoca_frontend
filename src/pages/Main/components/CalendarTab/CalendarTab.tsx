@@ -4,7 +4,8 @@ import IcCalendar from '../../../../assets/svgs/IcCalendar';
 import IcLeft from '../../../../assets/svgs/IcLeft';
 import IcRight from '../../../../assets/svgs/IcRight';
 import * as S from './CalendarTab.style';
-import CalendarModal from './Calendar';
+import CalendarModal from './CalendarModal';
+import { formatSelectedDate } from './formatSelectedDate';
 
 type CalendarValue = Date | Date[] | null;
 
@@ -38,7 +39,9 @@ export default function CalendarTab({ level, setLevel }: CalendarTabProps) {
         }}
       >
         <IcCalendar />
-        오늘
+        <S.SelectedDateText>
+          {formatSelectedDate(selectedDate)}
+        </S.SelectedDateText>
       </S.CalendarContainer>
       <S.LevelContainer>
         <button type='button' onClick={handleDecreaseLevel}>

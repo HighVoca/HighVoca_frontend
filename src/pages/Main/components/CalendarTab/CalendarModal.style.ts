@@ -10,10 +10,15 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 
+export const ButtonWrapper = styled.button`
+  margin-left: auto;
+`;
+
 export const ModalContainer = styled.div`
   width: 80%;
-  height: 50%;
+  height: 60%;
   padding: 1.6rem;
+  gap: 1rem;
   border-radius: 1.6rem;
   background-color: #141414;
   box-shadow:
@@ -22,7 +27,7 @@ export const ModalContainer = styled.div`
 
   .react-calendar {
     width: 100%;
-    height: 100%;
+    height: 80%;
     border-radius: 1.2rem;
     border: 0.1rem solid rgba(236, 206, 169, 0.3);
     background-color: ${({ theme }) => theme.colors.bgBlack};
@@ -32,6 +37,11 @@ export const ModalContainer = styled.div`
     width: 100%;
     flex-direction: row;
   }
+
+  .react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+  }
+
   .react-calendar__month-view__days {
     flex-direction: row;
     display: grid;
@@ -55,6 +65,12 @@ export const ModalContainer = styled.div`
   }
   .react-calendar__navigation button {
     color: #eccea9;
+  }
+
+  .react-calendar__navigation button:disabled {
+    background-color: ${({ theme }) => theme.colors.bgBlack};
+    color: rgba(255, 255, 255, 0.45);
+    cursor: not-allowed;
   }
 
   .react-calendar__navigation button:enabled:hover,
@@ -82,6 +98,12 @@ export const ModalContainer = styled.div`
     color: inherit;
     outline: none;
     box-shadow: none;
+  }
+
+  .react-calendar__tile:disabled,
+  .react-calendar__tile--disabled {
+    color: rgba(255, 255, 255, 0.35);
+    cursor: not-allowed;
   }
 
   .react-calendar__tile--active:enabled:hover,
